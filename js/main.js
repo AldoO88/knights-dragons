@@ -5,7 +5,7 @@ let requestId;
 let gameFrames = 0;
 let dragonFrames = 0;
 let gravity = 8.9;
-let points = 10;
+let points = 0;
 const demons =[];
 
 function clearCanvas() {
@@ -87,6 +87,17 @@ function demonAnimation(){
             if(demon.state === 'walk'){
                 if(demon.animate === 0){
                     demon.animate = 5; 
+                    demon.state = 'attack';
+                    demon.positionAnimate = 2;
+                }else{
+                    demon.animate--;
+                }
+            } 
+            if(demon.state === 'attack'){
+                if(demon.animate === 0){
+                    demon.animate = 5; 
+                    demon.state = 'walk';
+                    demon.positionAnimate = 1;
                 }else{
                     demon.animate--;
                 }
@@ -163,7 +174,8 @@ function dragonDead(){
         if(dragon.state === 'dead'){
             if(dragon.animate === 3){
                 dragon.animate = 3;
-
+                dragon.state = 'move';
+                dragon.positionAnimate = 2;
 
             }else{
                 dragon.animate--;
@@ -195,6 +207,7 @@ function checkCollisionsDragon() {
                 viking.animate = 0;
                 viking.positionAnimate = 6;
                 viking.state = 'dead';
+                dragon.state = 'move';
                 //viking.x = 10;
             }   
         }
