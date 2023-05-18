@@ -7,7 +7,7 @@ class Background {
         this.width = canvas.width;
         this.height = canvas.height;
         this.img = new Image();
-        this.img.src = '/images/game_background_4.png';
+        this.img.src = 'images/game_background_4.png';
         this.img.onload = () => {
             this.draw()
         }
@@ -37,7 +37,7 @@ class Viking{
         this.jumpStrength = 18;
         this.hp = 3;
         this.img = new Image();
-        this.img.src = '/images/Viking.png';
+        this.img.src = 'images/Viking.png';
         this.img.onload = () => {
           this.draw()
         }
@@ -162,7 +162,7 @@ class Assassin{
         this.jumpStrength = 18;
         this.hp = 3;
         this.img = new Image();
-        this.img.src = '/images/Assassin.png';
+        this.img.src = 'images/Assassin.png';
         this.img.onload = () => {
           this.draw()
         }
@@ -256,7 +256,7 @@ class Dragon{
         this.positionAnimate = 2; // variable para seleccionar a flash de arriba a abajo
         this.hp = 3;
         this.img = new Image();
-        this.img.src = '/images/DragonReverse.png'
+        this.img.src = 'images/DragonReverse.png'
         this.img.onload = () => {
           this.draw()
         }
@@ -298,7 +298,7 @@ class Demon{
         this.animate = 5;  //variable para seleccionar a flash de izquierda a derecha
         this.positionanimate = 1; // variable para seleccionar a flash de arriba a abajo
         this.img = new Image();
-        this.img.src = '/images/demon1.png'
+        this.img.src = 'images/demon1.png'
         this.img.onload = () => {
           this.draw()
         }
