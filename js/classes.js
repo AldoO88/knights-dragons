@@ -130,15 +130,23 @@ class Viking{
 
     isTouching(enemy) {
         if (this.x < enemy.x + (enemy.width - 250) && this.x + (this.width - 250) > enemy.x &&
-        this.y < enemy.y + (enemy.height -250) && this.y + (this.height - 250) > enemy.y){
-            enemy.positionAnimate = 2;
-            enemy.animate = 5;
+        this.y < enemy.y + (enemy.height - 250) && this.y + (this.height - 250) > enemy.y){ 
             return true;
         } else {
             return false;
         }
         
     }
+    isTouchingDragon(dragon) {
+        if (this.x < dragon.x + (dragon.width - 600) && this.x +( this.width - 250) > dragon.x &&
+        this.y < dragon.y + (dragon.height - 600) && this.y + (this.height- 250) > dragon.y){ 
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+    
 }
 
 class Assassin{
@@ -237,43 +245,50 @@ class Assassin{
 
 class Dragon{
     constructor(){
+        this.state = 'walk';
         this.width = 600;
         this.height = 600;
-        this.y = 100//canvas.height - this.height; // canvas.height - this.height
-        this.x = -600;
-        this.vx = 0;
-        this.vy = 0;
-        this.animate = 0;  //variable para seleccionar a flash de izquierda a derecha
-        this.positionanimate = 0; // variable para seleccionar a flash de arriba a abajo
-        this.jumpStrength = 18;
-        this.hp = 3
-        this.img = new Image()
-        this.img.src =
-          '/images/Dragon.png'
+        this.y = -125//canvas.height - this.height; // canvas.height - this.height
+        this.x = canvas.width;
+        this.vx = 3;
+        this.vy = 3;
+        this.animate = 8;  //variable para seleccionar a flash de izquierda a derecha
+        this.positionAnimate = 2; // variable para seleccionar a flash de arriba a abajo
+        this.hp = 3;
+        this.img = new Image();
+        this.img.src = '/images/DragonReverse.png'
         this.img.onload = () => {
           this.draw()
         }
     }
 
-        draw() {         
-              ctx.save();
-              ctx.scale(-1, 1);
-              ctx.drawImage(
-                // imagen fuente
-                this.img, (this.animate * 2304) /9, (this.positionanimate * 1280) / 5, 2304 / 9, 1280 / 5, 
-                this.x, this.y,
-                // ancho desde la posición de x en canvas (dw)
-                this.width * -1,
-                // alto desde la posición de y en canvas (dh)
-                this.height
-              )
-              ctx.restore();
+    draw() {         
+       
+        this.x--;
+        ctx.drawImage(this.img, (this.animate * 2304) /9, (this.positionAnimate * 1280) / 5, 2304 / 9, 1280 / 5, this.x, this.y, this.width,this.height);
+    }
+        attack(){
+            if(dragon.animate === 0) {
+                dragon.animate = 8; 
+            } else {
+                dragon.animate--; 
+                //dragonFrames++;
+            }
         }
+
+        walk(){
+
+        }
+
+       
+        
 }
 
 
 class Demon{
     constructor(y){
+        this.state = 'walk'
+        this.isAttaking = false;
         this.width = 300;
         this.height = 300;
         this.y = y//canvas.height - this.height; // canvas.height - this.height
@@ -282,11 +297,8 @@ class Demon{
         this.vy = 0;
         this.animate = 5;  //variable para seleccionar a flash de izquierda a derecha
         this.positionanimate = 1; // variable para seleccionar a flash de arriba a abajo
-        this.jumpStrength = 18;
-        this.hp = 3
-        this.img = new Image()
-        this.img.src =
-          '/images/demon1.png'
+        this.img = new Image();
+        this.img.src = '/images/demon1.png'
         this.img.onload = () => {
           this.draw()
         }
@@ -294,8 +306,6 @@ class Demon{
 
         draw() {      
             this.x--;   
-              //ctx.save();
-              //ctx.scale(-1, 1);
               ctx.drawImage(
                 // imagen fuente
                 this.img,
@@ -317,6 +327,5 @@ class Demon{
                 // alto desde la posición de y en canvas (dh)
                 this.height
               )
-              ctx.restore();
         }
 }
