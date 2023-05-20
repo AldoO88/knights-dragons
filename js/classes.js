@@ -7,7 +7,7 @@ class Background {
         this.width = canvas.width;
         this.height = canvas.height;
         this.img = new Image();
-        this.img.src = '/images/game_background_4.png';
+        this.img.src = 'images/game_background_4.png';
         this.img.onload = () => {
             this.draw()
         }
@@ -37,7 +37,7 @@ class Viking{
         this.jumpStrength = 18;
         this.hp = 3;
         this.img = new Image();
-        this.img.src = '/images/Viking.png';
+        this.img.src = 'images/Viking.png';
         this.img.onload = () => {
           this.draw()
         }
@@ -129,8 +129,8 @@ class Viking{
     }
 
     isTouching(enemy) {
-        if (this.x < enemy.x + (enemy.width - 250) && this.x + (this.width - 250) > enemy.x &&
-        this.y < enemy.y + (enemy.height - 250) && this.y + (this.height - 250) > enemy.y){ 
+        if (this.x < enemy.x + (enemy.width - 280) && this.x + (this.width - 250) > enemy.x &&
+        this.y < enemy.y + (enemy.height - 280) && this.y + (this.height - 220) > enemy.y){ 
             return true;
         } else {
             return false;
@@ -138,8 +138,8 @@ class Viking{
         
     }
     isTouchingDragon(dragon) {
-        if (this.x < dragon.x + (dragon.width - 600) && this.x +( this.width - 250) > dragon.x &&
-        this.y < dragon.y + (dragon.height - 600) && this.y + (this.height- 250) > dragon.y){ 
+        if (this.x < dragon.x + (dragon.width - 600) && this.x + 25 > dragon.x &&
+        this.y < dragon.y + (dragon.height - 600) && this.y + 25 > dragon.y){ 
             return true;
         } else {
             return false;
@@ -162,7 +162,7 @@ class Assassin{
         this.jumpStrength = 18;
         this.hp = 3;
         this.img = new Image();
-        this.img.src = '/images/Assassin.png';
+        this.img.src = 'images/Assassin.png';
         this.img.onload = () => {
           this.draw()
         }
@@ -256,7 +256,7 @@ class Dragon{
         this.positionAnimate = 2; // variable para seleccionar a flash de arriba a abajo
         this.hp = 3;
         this.img = new Image();
-        this.img.src = '/images/DragonReverse.png'
+        this.img.src = 'images/DragonReverse.png'
         this.img.onload = () => {
           this.draw()
         }
@@ -296,9 +296,9 @@ class Demon{
         this.vx = 0;
         this.vy = 0;
         this.animate = 5;  //variable para seleccionar a flash de izquierda a derecha
-        this.positionanimate = 1; // variable para seleccionar a flash de arriba a abajo
+        this.positionAnimate = 1; // variable para seleccionar a flash de arriba a abajo
         this.img = new Image();
-        this.img.src = '/images/demon1.png'
+        this.img.src = 'images/demon1.png'
         this.img.onload = () => {
           this.draw()
         }
@@ -313,7 +313,7 @@ class Demon{
                 // posición de x en la sub-imagen (sx)
                 (this.animate * 1536) / 6,
                 // posición de y en la sub-imagen (fuente, sy)
-                (this.positionanimate * 1280) / 5,
+                (this.positionAnimate * 1280) / 5,
                 // ancho desde la posición x del sub-frame (sw)
                 1536 / 6,
                 // alto desde la posición de y del sub-frame (sw)
