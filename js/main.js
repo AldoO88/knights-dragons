@@ -155,7 +155,7 @@ function dragonHit(){
     if(gameFrames % 10 === 0) {
         if(dragon.state === 'hit'){
             if(dragon.animate === 3){
-                dragon.animate = 3;
+                dragon.animate = 8;
                 dragon.state = 'move';
                 dragon.positionAnimate = 2;
 
@@ -367,7 +367,27 @@ function startGame(){
     document.getElementById('return-control').style.display = 'none';
     document.querySelector('h2').style.display = 'none';
     document.getElementById('movekeys').style.display = 'none';
-    
+    requestId;
+    gameFrames = 0;
+    dragonFrames = 0;
+    gravity = 8.9;
+    points = 0;
+    demons =[];
+    touching = 0;
+    viking.positionInY = 0;
+        viking.isAttaking = false;
+        viking.state = 'stand';
+        viking.y = 0//canvas.height - this.height; // canvas.height - this.height
+        viking.x = 50;
+        viking.animate = 0;  //variable para seleccionar a flash de izquierda a derecha
+        viking.positionAnimate = 0; // variable para seleccionar a flash de arriba a abajo
+        viking.hp = 3;
+        dragon.state = 'walk';
+        dragon.y = -125//canvas.height - this.height; // canvas.height - this.height
+        dragon.x = canvas.width;
+        dragon.animate = 8;  //variable para seleccionar a flash de izquierda a derecha
+        dragon.positionAnimate = 2;
+        dragon.hp = 3;
 
     if(!requestId){
         requestId = requestAnimationFrame(updateGame)
@@ -377,6 +397,7 @@ function startGame(){
 window.onload = () => {
 
     document.getElementById('start').onclick = () => {
+
         startGame(); 
     }
 
@@ -406,6 +427,12 @@ window.onload = () => {
         viking.animate = 0;  //variable para seleccionar a flash de izquierda a derecha
         viking.positionAnimate = 0; // variable para seleccionar a flash de arriba a abajo
         viking.hp = 3;
+        dragon.state = 'walk';
+        dragon.y = -125//canvas.height - this.height; // canvas.height - this.height
+        dragon.x = canvas.width;
+        dragon.animate = 8;  //variable para seleccionar a flash de izquierda a derecha
+        dragon.positionAnimate = 2;
+        dragon.hp = 3;
         //startGame();
     }
 
@@ -434,6 +461,12 @@ window.onload = () => {
         viking.animate = 0;  //variable para seleccionar a flash de izquierda a derecha
         viking.positionAnimate = 0; // variable para seleccionar a flash de arriba a abajo
         viking.hp = 3;
+        dragon.state = 'walk';
+        dragon.y = -125//canvas.height - this.height; // canvas.height - this.height
+        dragon.x = canvas.width;
+        dragon.animate = 8;  //variable para seleccionar a flash de izquierda a derecha
+        dragon.positionAnimate = 2;
+        dragon.hp = 3;
         startGame();
     }
 
@@ -455,6 +488,26 @@ window.onload = () => {
         document.getElementById('p2').style.display = '';
         document.getElementById('p3').style.display = '';
         document.getElementById('p4').style.display = '';
+        gameFrames = 0;
+        dragonFrames = 0;
+        gravity = 8.9;
+        points = 0;
+        demons =[];
+        touching = 0;
+        viking.positionInY = 0;
+        viking.isAttaking = false;
+        viking.state = 'stand';
+        viking.y = 0//canvas.height - this.height; // canvas.height - this.height
+        viking.x = 50;
+        viking.animate = 0;  //variable para seleccionar a flash de izquierda a derecha
+        viking.positionAnimate = 0; // variable para seleccionar a flash de arriba a abajo
+        viking.hp = 3;
+        dragon.state = 'walk';
+        dragon.y = -125//canvas.height - this.height; // canvas.height - this.height
+        dragon.x = canvas.width;
+        dragon.animate = 8;  //variable para seleccionar a flash de izquierda a derecha
+        dragon.positionAnimate = 2;
+        dragon.hp = 3;
         
         
         
@@ -493,6 +546,12 @@ window.onload = () => {
         viking.animate = 0;  //variable para seleccionar a flash de izquierda a derecha
         viking.positionAnimate = 0; // variable para seleccionar a flash de arriba a abajo
         viking.hp = 3;
+        dragon.state = 'walk';
+        dragon.y = -125//canvas.height - this.height; // canvas.height - this.height
+        dragon.x = canvas.width;
+        dragon.animate = 8;  //variable para seleccionar a flash de izquierda a derecha
+        dragon.positionAnimate = 2;
+        dragon.hp = 3;
 
     }
 
