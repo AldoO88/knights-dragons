@@ -1,5 +1,8 @@
+let dontKey = true;
+
 document.addEventListener('keydown', e => {
     e.preventDefault();
+    if(dontKey === true){
     switch (e.keyCode) {
         case 37:
             viking.state = 'moveleft';
@@ -33,4 +36,5 @@ document.addEventListener('keydown', e => {
             viking.attack();
             return;
     }
+}
 })
