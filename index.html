@@ -4,10 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Knights and Dragons</title>
 </head>
 <body>
-    <canvas width="1200" height="600"></canvas>
+
+    <main>
+        
+        <section id="intro" >
+            <h1>Knights & Dragons</h1>
+            <button id="start">
+                <strong>Start Game</strong>
+            </button>
+            
+            <button id="controls">
+               <strong>Controls</strong> 
+            </button>
+
+        </section>
+        <section id="canvas">
+            <canvas width="1200" height="600" style="display: none;"></canvas>
+            <button id="reset" style="display: none;">
+                <strong>Reset</strong> 
+            </button>
+            <button id="return" style="display: none;">
+                <strong>Return</strong> 
+            </button>
+        </section>
+        
+        <section id="instructions">
+            <h2 style="display: none;">Knights and Dragons</h2>
+            <h3 style="display: none;">Controls</h3>
+            <div id="instructions-div">
+                <div >
+                    <p id="p1" style="display: none;">The viking can be moved up, down, right and left</p>
+                    <img src="images/vikingmove.png" alt="move viking" id="moveviking" style="display: none;">
+               
+                    <p id="p2" style="display: none;">use the arrow keys for move the viking</p>
+                    <img src="images/movekeys.png" alt="move keys" id="movekeys" style="display: none;">
+                </div>
+                    
+                <div>
+                    <p id="p3" style="display: none;">Attack movement</p>
+                    <img src="images/vikingattack.png" alt="viking attack" id="vikingattack" style="display: none;">
+                  
+                    <p id="p4" style="display: none;">use the key A for attack at the enemy's</p>
+                    <img src="images/keya.png" alt="key A" id="keya" style="display: none;">
+
+                </div>
+            </div>
+            <button id="return-control" style="display: none;">
+                <strong>Return</strong>
+            </button>
+            
+
+
+    
+        </section>
+    </main>
+    
 </body>
 <script src="js/main.js"></script>
 <script src="js/classes.js"></script>
