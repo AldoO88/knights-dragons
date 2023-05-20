@@ -2,7 +2,7 @@ html{
   font-family: "Impact";
 }
 body{
-  background-image: url("./images/castlebridge.png");
+  background-image: url("../images/castlebridge.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-color: black;
